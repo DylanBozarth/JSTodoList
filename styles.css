@@ -1,0 +1,25 @@
+body{
+  background-image: linear-gradient(to bottom, #052c66, #005590, #007b8c, #009b5d, #7cb204);
+  }
+  .container{
+    max-width: 400px;
+  }
+  input[type=text],
+  input[type=text]:focus{
+    color: #fff;
+    border: none;
+    background: black;
+    max-width: 400px;
+  }
+  .todos li{
+    background: darkolivegreen;
+  }
+  .delete{
+    cursor: pointer;
+  }
+  .filtered {
+    display: none !important;
+  }
+  .important {
+    background-color: red;
+  }
