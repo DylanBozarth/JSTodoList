@@ -1,7 +1,7 @@
 const newitem = document.querySelector('.add');
 const list = document.querySelector('.todos');
 const search = document.querySelector('.search input');
-
+const papersound = new Audio ('paper.mp3')
 // generating an html template with the user's text inside it
 const generateTemplate = (todo) => {
 const html = `<li class="list-group-item d-flex justify-content-between align-items-center">
@@ -16,6 +16,7 @@ list.innerHTML += html
 // getting the value from the user typing 
 newitem.addEventListener('submit', e => {
     e.preventDefault();
+    
     /* .trim() removes spaces before and after */
     const todo = newitem.add.value.trim();
 
@@ -30,15 +31,19 @@ newitem.addEventListener('submit', e => {
 // attactch an event listener to the whole ul instead of each trash can, makes it more efficient 
 // delete todos 
 list.addEventListener('click', e => {
-    //contains() checks if that method contains what was written in ('')
-if(e.target.classList.contains('delete'))
-e.target.parentElement.remove();
-});
-list.addEventListener('click', e => {
-    //contains() checks if that method contains what was written in ('')
-if(e.target.classList.contains('mark'))
-e.target.parentElement.classList('important');
-});
+    if (e.target.classList.contains('delete')) {
+      const handle = setTimeout(() => {
+        e.target.parentElement.remove();
+        clearTimeout(handle);
+      }, 2000);
+    }
+  });
+  list.addEventListener('click', e => {
+      if (e.target.classList.contains('delete'))
+      e.target.parentElement.classList.add('checkedout')
+      papersound.play();
+  });
+
 // event listener to the list, when we clikck on the list it checks if the clicked item contains delete
 // if it contains delete, it removes the parent element of the clicked item. 
 
