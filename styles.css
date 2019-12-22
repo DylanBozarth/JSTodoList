@@ -2,17 +2,21 @@ body{
   background-image: linear-gradient(to bottom, #052c66, #005590, #007b8c, #009b5d, #7cb204);
   }
   .container{
-    max-width: 400px;
+    max-width: 450px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 6px;
   }
   input[type=text],
   input[type=text]:focus{
     color: #fff;
     border: none;
-    background: black;
+    background: white;
     max-width: 400px;
   }
   .todos li{
-    background: darkolivegreen;
+    background: darkslategrey;
+    margin: 3px;
   }
   .delete{
     cursor: pointer;
@@ -23,3 +27,10 @@ body{
   .important {
     background-color: red;
   }
+  .checkedout {
+    text-decoration: line-through;
+  }
+  .container {
+    background-color: darkolivegreen;
+  }
+  

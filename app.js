@@ -35,13 +35,17 @@ list.addEventListener('click', e => {
       const handle = setTimeout(() => {
         e.target.parentElement.remove();
         clearTimeout(handle);
-      }, 2000);
+      }, 1000);
     }
   });
   list.addEventListener('click', e => {
       if (e.target.classList.contains('delete'))
       e.target.parentElement.classList.add('checkedout')
       papersound.play();
+  });
+  list.addEventListener('click', e => {
+    if (e.target.classList.contains('delete'))
+    e.target.parentElement.classList.add('')
   });
 
 // event listener to the list, when we clikck on the list it checks if the clicked item contains delete
