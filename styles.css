@@ -33,4 +33,9 @@ body{
   .container {
     background-color: darkolivegreen;
   }
-  
+  .text-center {
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 24px;
+  }
