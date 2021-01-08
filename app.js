@@ -12,7 +12,7 @@ const html = `<li class="list-group-item d-flex justify-content-between align-it
 // adding that template to the ul element in html 
 list.innerHTML += html
 }
-
+var audio = new Audio('paper.mp3');
 // getting the value from the user typing 
 newitem.addEventListener('submit', e => {
     e.preventDefault();
@@ -36,6 +36,7 @@ list.addEventListener('click', e => {
         e.target.parentElement.remove();
         clearTimeout(handle);
       }, 1000);
+      audio.play();
     }
   });
   list.addEventListener('click', e => {
